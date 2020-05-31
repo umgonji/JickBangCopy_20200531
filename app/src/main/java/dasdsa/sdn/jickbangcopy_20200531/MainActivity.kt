@@ -2,6 +2,7 @@ package dasdsa.sdn.jickbangcopy_20200531
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import dasdsa.sdn.jickbangcopy_20200531.adapters.RoomAdapter
 import dasdsa.sdn.jickbangcopy_20200531.datas.Room
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,6 +20,18 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+
+        roomListView.setOnItemLongClickListener { parent, view, position, id ->
+
+            val alert = AlertDialog.Builder(mContext)
+            alert.setTitle("테스트")
+            alert.setMessage("테스트용 얼럿")
+            alert.setPositiveButton("확인", null)
+            alert.show()
+
+            return@setOnItemLongClickListener true
+
+        }
 
     }
 
